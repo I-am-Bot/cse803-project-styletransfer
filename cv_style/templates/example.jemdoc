@@ -1,0 +1,58 @@
+= MSU CSE 803 -- Style Transfer Demo
+[http://cse.msu.edu/~liyaxin1/ Namratha Shah, Wei Jin, Yaxin Li, Yue Zhang]
+
+This is a demo for the course project of CSE 803, aiming to provide a user interface to transfer a given picture. 
+
+== Introduction
+Rendering the semantic content of an image in different styles is a difficult image processing task. Limiting factors for previous approaches has been the lack of image representations that represent the semantic information. Style transfer is the process of modifying the style of an image while preserving its contents/semantics. The application of style transfer has been on the rise in the previous days and it has applications in the field of videography. Specifically, image style transfer is
+an important image editing task which enables the creation of the new artistic works. It requires two images - a content image and a style reference image (such as an artwork by a famous painter)—and blend them together so the output image looks like the content image, but “painted” in the style of the style reference image.
+
+== Usage
+~~~
+click the button to select your picture and upload it to get your transfered picture! 
+~~~
+
+{{<html>
+   <body>
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" style="font-size:20px" accept="image/png, image/jpeg"/>
+         <select name="styles" style="font-size:20px" id="styles">
+           <option value="horse2zebra">horse2zebra</option>
+           <option value="monet2photo">monet2photo</option>
+           <option value="yaxin">yaxin</option>
+         </select>
+         <input type = "submit" style="font-size:20px" />
+      </form>   
+   </body>
+</html>}} 
+
+
+== Example
+{{<html>
+<body>
+    <table border="5" bordercolor="red" align="center">
+        <tr>
+            <th>Input Picture</th>
+            <th>Transferred Picture</th>
+        </tr>
+        <tr>
+            <td><img src="static/images/horse2real.jpg" alt="" border=3 height=300 width=300></img></td>
+            <td><img src="static/images/horse2fake.jpg" alt="" border=3 height=300 width=300></img></td>
+        </tr>
+    </table>
+</body>
+<html>}}
+
+== More Details 
+=== Project Goals
+- Explore popular style transfer models and implement them. As a initial plan, the models we intend to implement are CycleGAN and Pix2pix.
+- Evaluate the effectiveness of different models under both qualitative and quantitative metrics; compare the performance of those models and analyze the results.
+- Develop a web page with UI where the user can upload images and then obtain the transferred images.  
+
+=== Methodology
+Generative  Adversarial  Networks  (GANs)  are  able to classify  whether  an  image  is  real  or  fake  by  optimizing the loss function.  cGAN  just  as  GAN  learns  a  conditional  generative model.  Pix2pix is an implementation of cGAN and that is one of the models that we have implemented along with CycleGAN.
+
+=== Experimental Results
+Please see more details in our project report.
+

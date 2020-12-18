@@ -1,0 +1,54 @@
+= MSU CSE 803 -- Style Transfer Demo - Result Page
+[http://cse.msu.edu/~liyaxin1/ Namratha Shah, Wei Jin, Yaxin Li, Yue Zhang]
+
+This is a demo for the course project of CSE 803, aiming to provide a user interface to transfer a given picture. 
+
+== Usage
+~~~
+click the button to select your picture and upload it to get your transfered picture! 
+~~~
+
+{{<html>
+<h3>{{time}}</h3>
+   <body>
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" style="font-size:20px" accept="image/png, image/jpeg"/>
+         <select name="styles" style="font-size:20px" id="styles">
+           <option value="horse2zebra">horse2zebra</option>
+           <option value="monet2photo">monet2photo</option>
+           <option value="yaxin">yaxin</option>
+         </select>
+         <input type = "submit" style="font-size:20px" />
+      </form>   
+   </body>
+</html>}} 
+
+== Result
+{{<html>
+<body>
+    <table border="5" bordercolor="red" align="center">
+        <tr>
+            <th>Input Picture</th>
+            <th>Transferred Picture</th>
+        </tr>
+        <tr>
+            <td><img src="static/images/input-image.png" alt="" border=3 height=300 width=300></img></td>
+            <td><img src="static/images/output-image.png" alt="" border=3 height=300 width=300></img></td>
+        </tr>
+    </table>
+</body>
+<html>}}
+
+== More Details 
+=== Project Goals
+- Explore popular style transfer models and implement them. As a initial plan, the models we intend to implement are CycleGAN and Pix2pix.
+- Evaluate the effectiveness of different models under both qualitative and quantitative metrics; compare the performance of those models and analyze the results.
+- Develop a web page with UI where the user can upload images and then obtain the transferred images.  
+
+=== Methodology
+Generative  Adversarial  Networks  (GANs)  are  able to classify  whether  an  image  is  real  or  fake  by  optimizing the loss function.  cGAN  just  as  GAN  learns  a  conditional  generative model.  Pix2pix is an implementation of cGAN and that is one of the models that we have implemented along with CycleGAN.
+
+=== Experimental Results
+Please see more details in our project report.
+

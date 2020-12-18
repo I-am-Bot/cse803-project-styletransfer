@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+<title>MSU CSE 803 &ndash; Style Transfer Demo</title>
+</head>
+<body>
+<div id="layout-content">
+<div id="toptitle">
+<h1>MSU CSE 803 &ndash; Style Transfer Demo</h1>
+<div id="subtitle"><a href="http://cse.msu.edu/~liyaxin1/" target=&ldquo;blank&rdquo;>Namratha Shah, Wei Jin, Yaxin Li, Yue Zhang</a>
+</div>
+</div>
+<p>This is a demo for the course project of CSE 803, aiming to provide a user interface to transfer a given picture. 
+</p>
+<h2>Introduction</h2>
+<p>Rendering the semantic content of an image in different styles is a difficult image processing task. Limiting factors for previous approaches has been the lack of image representations that represent the semantic information. Style transfer is the process of modifying the style of an image while preserving its contents/semantics. The application of style transfer has been on the rise in the previous days and it has applications in the field of videography. Specifically, image style transfer is
+an important image editing task which enables the creation of the new artistic works. It requires two images - a content image and a style reference image (such as an artwork by a famous painter)—and blend them together so the output image looks like the content image, but “painted” in the style of the style reference image.
+</p>
+<h2>Usage</h2>
+<div class="infoblock">
+<div class="blockcontent">
+<p>click the button to select your picture and upload it to get your transfered picture! 
+</p>
+</div></div>
+<p><html>
+<body>
+<form action = "http://localhost:5000/uploader" method = "POST" 
+enctype = "multipart/form-data">
+<input type = "file" name = "file" style="font-size:20px" accept="image/png, image/jpeg"/>
+<select name="styles" style="font-size:20px" id="styles">
+<option value="horse2zebra">horse2zebra</option>
+<option value="monet2photo">monet2photo</option>
+<option value="edge2shoes">edge2shoes</option>
+</select>
+<input type = "submit" style="font-size:20px" />
+</form>   
+</body>
+</html> 
+</p>
+<h2>Example</h2>
+<p><html>
+<body>
+<table border="5" bordercolor="red" align="center">
+<tr>
+<th>Input Picture</th>
+<th>Transferred Picture</th>
+</tr>
+<tr>
+<td><img src="static/images/horse2real.jpg" alt="" border=3 height=300 width=300></img></td>
+<td><img src="static/images/horse2fake.jpg" alt="" border=3 height=300 width=300></img></td>
+</tr>
+</table>
+</body>
+<html>
+</p>
+<h2>More Details </h2>
+<h3>Project Goals</h3>
+<ul>
+<li><p>Explore popular style transfer models and implement them. As a initial plan, the models we intend to implement are CycleGAN and Pix2pix.
+</p>
+</li>
+<li><p>Evaluate the effectiveness of different models under both qualitative and quantitative metrics; compare the performance of those models and analyze the results.
+</p>
+</li>
+<li><p>Develop a web page with UI where the user can upload images and then obtain the transferred images.  
+</p>
+</li>
+</ul>
+<h3>Methodology</h3>
+<p>Generative  Adversarial  Networks  (GANs)  are  able to classify  whether  an  image  is  real  or  fake  by  optimizing the loss function.  cGAN  just  as  GAN  learns  a  conditional  generative model.  Pix2pix is an implementation of cGAN and that is one of the models that we have implemented along with CycleGAN.
+</p>
+<h3>Experimental Results</h3>
+<p>Please see more details in our project report.
+</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2020-12-15 11:22:59 EST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</div>
+</body>
+</html>
